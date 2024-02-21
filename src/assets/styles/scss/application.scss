@@ -1,0 +1,387 @@
+*:active,
+*:focus {
+  outline: none;
+}
+
+a {
+  color: $gray-343;
+  text-decoration: none;
+
+  &:hover {
+    color: $gray-color-transparent;
+  }
+}
+
+hr {
+  border-top: 2px solid $gray-light;
+}
+
+// Types
+.primary {
+  color: $primary-color;
+}
+
+.standard {
+  color: $standard-color;
+}
+
+.success {
+  color: $success-color;
+}
+.error {
+  color: $error-color;
+}
+
+.error-border {
+  box-shadow: 0 0 0 1px $error-color !important;
+}
+
+.error-border-color {
+  border-color: $error-color !important;
+}
+
+.validation-message {
+  height: rem(13px);
+  white-space: nowrap;
+  font-size: $font-size-xs;
+}
+
+.warning {
+  color: $warning-color;
+}
+
+.warning-badge {
+  display: flex;
+  align-items: center;
+  background: $warning-color;
+  color: $white-color;
+  padding: 0.25rem 1rem;
+  border-radius: rem(4px);
+  height: 2.125rem;
+}
+
+// Card class Modifier
+.card {
+  border: none;
+  @include cards();
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.75;
+}
+
+html {
+  max-width: 100vw;
+  height: 100vh;
+  overflow: auto;
+}
+
+body,
+#__nuxt,
+#__layout,
+#default-layout,
+#default-layout > .wrapper {
+  height: 100%;
+  overflow: hidden;
+}
+
+// Main Styles
+body {
+  background: #f5f7fa;
+  font-family: 'Rubik', sans-serif;
+  font-size: $font-size;
+  -webkit-overflow-scrolling: touch;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  height: 100%;
+}
+
+.font-size-xs {
+  font-size: $font-size-xs;
+}
+.font-size-sm {
+  font-size: $font-size-sm;
+}
+.font-size-normal {
+  font-size: $font-size;
+}
+.font-size-lg {
+  font-size: $font-size-lg;
+}
+
+.shadow {
+  box-shadow: 0 rem(2px) rem(16px) 0 rgba(0, 0, 0, 0.05) !important;
+}
+
+[role='main'] {
+  flex: 1 0 0;
+  padding-top: $navbar-height;
+}
+
+.main-content {
+  padding-top: rem(32px);
+}
+
+.table-title {
+  margin: 0;
+}
+
+.page-title {
+  font-size: 1rem;
+  font-weight: $font-weight-bolder;
+  line-height: 1;
+  color: $gray-color;
+  margin-bottom: 0.4rem;
+}
+
+.collapsed .hide-collapsed {
+  display: none;
+}
+
+// Hidden Inputs Style
+.hidden-input {
+  position: fixed;
+  opacity: 0;
+  top: -500px;
+}
+
+// universal Vertical divider
+.vertical-divider {
+  width: rem(1px);
+  background: $input-border-color;
+  min-height: rem(32px);
+  height: 100%;
+  max-height: 80%;
+}
+
+//Select Style
+select {
+  padding-top: 0.1rem;
+  border: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512' %3E%3Cpath fill='%238181a5' d='M119.5 326.9L3.5 209.1c-4.7-4.7-4.7-12.3 0-17l7.1-7.1c4.7-4.7 12.3-4.7 17 0L128 287.3l100.4-102.2c4.7-4.7 12.3-4.7 17 0l7.1 7.1c4.7 4.7 4.7 12.3 0 17L136.5 327c-4.7 4.6-12.3 4.6-17-.1z' class=''%3E%3C/path%3E%3C/svg%3E")
+    no-repeat;
+  background-size: rem(8px);
+  background-position: right;
+  -webkit-appearance: none;
+}
+
+// Styling Editor Html Field
+.html-text {
+  p {
+    word-wrap: anywhere;
+    margin-bottom: 0.4rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.svg-inline--fa {
+  vertical-align: middle;
+}
+
+.icons-lower {
+  display: flex;
+  font-size: 1rem !important;
+  & .svg-inline--fa {
+    height: rem(13px);
+  }
+}
+
+// Accordeon Component
+.arrow-icon {
+  font-size: $font-size-xl;
+  transform: scale3d(1, -1, 1);
+  transition: transform 0.2s ease-out;
+}
+
+.collapsed {
+  .arrow-icon {
+    font-size: $font-size-xl;
+    transform: scale3d(1, 1, 1);
+    transition: transform 0.2s ease-out;
+  }
+}
+
+// Video
+.course-video-preview .content-with-label.preview-container {
+  border: none;
+  box-shadow: none;
+}
+
+// mx-Calendar Header
+.mx-calendar-header,
+.mx-time-header {
+  padding-top: rem(10px);
+  line-height: rem(10px);
+}
+
+.mx-date-row {
+  .cell {
+    &.active,
+    &:hover {
+      //@include cards();
+      background: $primary-color;
+      color: $white-color;
+    }
+  }
+}
+
+// Draggable Elements
+.draggable #draggable-header {
+  cursor: move;
+}
+
+// SideBar Styles
+.sidebar {
+  position: relative;
+  @include max(768) {
+    position: fixed;
+    z-index: 10;
+  }
+
+}
+
+.no-sidebar {
+  .sidebar {
+    display: none;
+  }
+}
+
+
+.custom-scroll {
+  /* Стили бегунка */
+  .ps__thumb-y {
+    width: rem(8px);
+    border-radius: 4px;
+    background: rgba($primary-color, 0.5);
+  }
+  .ps__thumb-x {
+    width: rem(8px);
+    border-radius: 4px;
+    background: rgba($primary-color, 0.5);
+  }
+
+  /* Стили полосы прокрутки */
+  .ps__rail-y {
+    width: rem(10px);
+    background-color: transparent !important;
+  }
+  .ps__rail-x {
+    height: rem(10px);
+    background-color: transparent !important;
+  }
+
+  /* Состояние бегунка в момент когда произошел ховер на него или саму полосу прокрутки */
+  .ps__rail-y:hover > .ps__thumb-y {
+    width: rem(8px);
+    border-radius: 4px;
+    background: rgba($primary-color, 0.5);
+  }
+  .ps__rail-x:hover > .ps__thumb-x {
+    height: rem(8px);
+    border-radius: 4px;
+    background: rgba($primary-color, 0.5);
+  }
+
+  /* Состояние бегунка в момент когда его нажали и передвигают */
+  .ps__rail-y.ps--clicking .ps__thumb-y {
+    width: rem(8px);
+    border-radius: 4px;
+    background: rgba($primary-color, 0.5);
+  }
+  .ps__rail-x.ps--clicking .ps__thumb-x {
+    height: rem(8px);
+    border-radius: 4px;
+    background: rgba($primary-color, 0.5);
+  }
+}
+
+// ARROW ICON
+.expand-icon {
+  svg {
+    transform: rotate(0deg);
+    transition: transform 0.2s ease-out;
+  }
+}
+
+.collapsed .expand-icon {
+  svg {
+    transform: rotate(-90deg);
+    transform: rotate3d(0, 0, 1, -90deg);
+    transition: transform 0.2s ease-in;
+  }
+}
+
+div.code {
+  width: 100% !important;
+}
+
+.flex-center-center {
+  display: flex;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.flex-center-between {
+  display: flex;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.mml-1 {
+  margin-left: rem(-3px);
+}
+.mml-2 {
+  margin-left: rem(-6px);
+}
+.mml-3 {
+  margin-left: rem(-9px);
+}
+
+.dropdown-menu.dropdown-menu-up {
+  bottom: 100%;
+  top: unset;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none !important;
+    margin: 0 !important; /* <-- Apparently some margin are still there even though it's hidden */
+}
+input[type='number'] {
+  -moz-appearance: textfield !important;
+}
+input[type="number"]:hover,
+input[type="number"]:focus {
+  -moz-appearance: number-input !important;
+}
+
+.html-inside {
+  & p {
+    margin-bottom: 0 !important;
+  }
+}
+
+.upper-case {
+  text-transform: uppercase;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

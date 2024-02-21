@@ -1,0 +1,26 @@
+{
+  "name": "vite-vue2-mf",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "serve": "vite preview --port 5173 --strictPort"
+  },
+  "dependencies": {
+    "dayjs": "^1.10.7",
+    "vee-validate": "^3.4.5",
+    "vue": "^2.7.16",
+    "vue-multiselect": "^2.1.6",
+    "vue-router": "^3.6.5"
+  },
+  "devDependencies": {
+    "@originjs/vite-plugin-federation": "^1.3.5",
+    "@vitejs/plugin-vue2": "^2.3.1",
+    "sass": "^1.49.7",
+    "vite": "^5.1.0",
+    "vite-plugin-lib-inject-css": "^1.3.0"
+  }
+}
